@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminous | Shop Unique Jewelry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+     <!-- Header -->
+     <header class="sticky-top bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+                <a class="navbar-brand logo" href="index.html">LUMINOUS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.html">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                    <div class="ms-lg-4 mt-3 mt-lg-0 d-flex">
+                        <a href="login.html" class="btn btn-link">
+                            <img src="accounticon.png" alt="Cart" style="width: 50px; height: 50px;">
+                        </a>
+                        <a href="cart.html" class="btn btn-link position-relative ms-2">
+                            <img src="carticon.png" alt="Cart" style="width: 55px; height: 55px;">
+                    
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shop Header -->
+    <div class="shop-header">
+        <div class="container">
+            <h1 class="section-title mb-2">Our Collection</h1>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Filters Sidebar -->
+                <div class="col-lg-3 product-filters">
+                    <div class="filter-group">
+                        <h3 class="filter-title">Categories</h3>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="necklaces"> Necklaces
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="earrings"> Earrings
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="bracelets"> Bracelets
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="rings"> Rings
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="category" value="anklets"> Anklets
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Materials</h3>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="gold"> Gold
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="silver"> Silver
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="rosegold"> Rose Gold
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="material" value="platinum"> Platinum
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Price Range</h3>
+                        <input type="range" class="price-range form-range" min="0" max="1000" step="50" id="priceRange">
+                        <div class="price-labels">
+                            <span>$0</span>
+                            <span id="priceValue">$500</span>
+                            <span>$1000+</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Collections</h3>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="spring"> Spring Bloom
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="ethereal"> Ethereal
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="celestial"> Celestial
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="minimalist"> Minimalist
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary w-100 mb-4">Apply Filters</button>
+                    <button class="btn btn-outline w-100">Reset</button>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Showing 1-12 of 36 products</p>
+                        <div class="d-flex align-items-center">
+                            <label for="sort" class="me-2 mb-0">Sort by:</label>
+                            <select class="sort-select" id="sort">
+                                <option value="featured">Featured</option>
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Product 1 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="product2.jpg" class="card-img-top" alt="Gold Necklace">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="badge-new">New</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Delicate Pearl Necklace</h5>
+                                    <p class="product-price mb-3">$249.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="1">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="silver earing.jpg" class="card-img-top" alt="Silver Earrings">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Celestial Star Earrings</h5>
+                                    <p class="product-price mb-3">$189.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="2">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="product11.jpg" class="card-img-top" alt="Rose Gold Bracelet">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Ethereal Chain Bracelet</h5>
+                                    <p class="product-price mb-3">$175.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="3">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="product4.jpg" class="card-img-top" alt="Diamond Ring">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                    <div class="badge-new">New</div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Minimalist Diamond Ring</h5>
+                                    <p class="product-price mb-3">$329.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="4">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="product8.jpg" class="card-img-top" alt="Gold Anklet">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Delicate Chain Anklet</h5>
+                                    <p class="product-price mb-3">$129.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="5">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card card-product">
+                                <div class="position-relative">
+                                    <img src="platanium necklace.jpg" class="card-img-top" alt="Platinum Necklace">
+                                    <div class="wishlist-icon">
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="product-title">Twisted Platinum Necklace</h5>
+                                    <p class="product-price mb-3">$425.00</p>
+                                    <div class="d-flex justify-content-between">
+                                        <button class="btn btn-primary btn-sm add-to-cart" data-id="6">Add to Cart</button>
+                                        <button class="btn customize-btn btn-sm" data-bs-toggle="modal" data-bs-target="#customizeModal">Customize</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- More products go here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-5">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customize Modal -->
+    <div class="modal fade" id="customizeModal" tabindex="-1" aria-labelledby="customizeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customizeModalLabel">Customize Your Jewelry</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="product1.jpg" class="img-fluid mb-3" alt="Product Image">
+                            <h4 class="product-title">Delicate Pearl Necklace</h4>
+                            <p class="product-price">$249.00</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-4">
+                                <h5>Select Material</h5>
+                                <div class="custom-option d-flex align-items-center active">
+                                    <img src="gold.jpg" alt="Gold">
+                                    <div>
+                                        <strong>Gold</strong>
+                                        <p class="mb-0 small">14k Yellow Gold</p>
+                                    </div>
+                                </div>
+                                <div class="custom-option d-flex align-items-center">
+                                    <img src="silver.jpg" alt="Silver">
+                                    <div>
+                                        <strong>Silver</strong>
+                                        <p class="mb-0 small">Sterling Silver</p>
+                                    </div>
+                                </div>
+                                <div class="custom-option d-flex align-items-center">
+                                    <img src="rose gold.jpg" alt="Rose Gold">
+                                    <div>
+                                        <strong>Rose Gold</strong>
+                                        <p class="mb-0 small">14k Rose Gold</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5>Chain Length</h5>
+                                <select class="form-select mb-3">
+                                    <option>16 inches</option>
+                                    <option>18 inches</option>
+                                    <option>20 inches</option>
+                                    <option>24 inches</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h5>Add Engraving</h5>
+                                <input type="text" class="form-control mb-2" placeholder="Enter text to engrave (max 10 characters)">
+                                <select class="form-select">
+                                    <option>Script Font</option>
+                                    <option>Block Font</option>
+                                    <option>Cursive Font</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="newsletter py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-8">
+                    <h2 class="section-title">Join Our Newsletter</h2>
+                    <p class="mb-4">Subscribe to receive updates on new collections, special offers and other discount information.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address">
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <p class="mb-0" style="font-size: 1.8rem;font-weight: 400; letter-spacing: 2px;font-family: 'Cormorant Garamond',serif; color: rgba(255,255,255,0.7);">Luminous</p>
+                    <p>Handcrafted jewelry for the modern spirit. Each piece tells a unique story.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="footer-title">Shop</h4>
+                    <a href="#" class="footer-link">All Collections</a>
+                    <a href="#" class="footer-link">Necklaces</a>
+                    <a href="#" class="footer-link">Earrings</a>
+                    <a href="#" class="footer-link">Bracelets</a>
+                    <a href="#" class="footer-link">Rings</a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <a href="#" class="footer-link">About Us</a>
+                    <a href="#" class="footer-link">Customization</a>
+                    <a href="#" class="footer-link">Care Guide</a>
+                    <a href="#" class="footer-link">FAQs</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i> 123 Jewelry Lane, New York, NY 10001
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i> +1 (212) 555-7890
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i> hello@luminousjewelry.com
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-clock"></i> Mon-Fri: 9am-6pm, Sat: 10am-4pm
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0" style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">© 2025 Luminous Jewelry-Riya Shivhare. All rights reserved.</p>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    
+<!-- Bootstrap JS and Dependencies -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+<script>
+    // Initialize or load cart from localStorage
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+    // Update cart count badge
+    function updateCartCount() {
+      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const badge = document.getElementById("cart-count");
+      if (badge) badge.textContent = count;
+    }
+    
+    // Show toast notification
+    function showToast(message) {
+      const toast = document.createElement("div");
+      toast.className = "toast-notification";
+      toast.innerHTML = `<div class="toast-body">${message}</div>`;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+    
+    // Add to cart logic
+    function addToCart(product) {
+      const existing = cart.find((item) => item.id === product.id);
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      showToast(`${product.name} added to cart!`);
+    }
+    
+    // Event listener for Add to Cart buttons
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+      button.addEventListener("click", (e) => {
+        const card = e.target.closest(".card-product");
+        const id = e.target.dataset.id;
+        const name = card.querySelector(".product-title").innerText;
+        const price = parseFloat(
+          card.querySelector(".product-price").innerText.replace("$", "")
+        );
+        const image = card.querySelector("img").src;
+    
+        addToCart({ id, name, price, image });
+      });
+    });
+    
+    // Call once on load
+    updateCartCount();
+    </script>
+    
+    <!-- Include toast CSS -->
+    <style>
+    .toast-notification {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      animation: fadeInOut 3s ease forwards;
+    }
+    
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      10% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    }
+    </style>
+    
+    
+</body>
+</html>

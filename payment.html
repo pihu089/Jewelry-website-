@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style2.css"> <!-- Make sure this path is correct -->
+
+</head>
+<body>
+  <div class="container my-5">
+    <div class="card shadow p-4">
+      <h3 class="text-center mb-4">Payment Options</h3>
+
+      <form id="payment-form">
+        <div class="mb-3">
+          <label for="payment-method" class="form-label">Choose Payment Method</label>
+          <select id="payment-method" class="form-select" required>
+            <option value="">-- Select --</option>
+            <option value="card">Credit/Debit Card</option>
+            <option value="upi">UPI</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </div>
+
+        <!-- Card Payment Fields -->
+        <div id="card-fields" class="hidden">
+          <div class="mb-3">
+            <label for="card-number" class="form-label">Card Number</label>
+            <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456">
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="expiry" class="form-label">Expiry Date</label>
+              <input type="text" id="expiry" class="form-control" placeholder="MM/YY">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" id="cvv" class="form-control" placeholder="123">
+            </div>
+          </div>
+        </div>
+
+        <!-- UPI Fields -->
+        <div id="upi-fields" class="hidden">
+          <div class="mb-3">
+            <label for="upi-id" class="form-label">UPI ID</label>
+            <input type="text" id="upi-id" class="form-control" placeholder="yourname@upi">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary w-100">Place Order</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="payment-success" class="text-center mt-4 d-none">
+        <h4 class="text-success">✅ Order placed successfully!</h4>
+        <p>You will be redirected to the home page shortly...</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const methodSelect = document.getElementById("payment-method");
+    const cardFields = document.getElementById("card-fields");
+    const upiFields = document.getElementById("upi-fields");
+
+    methodSelect.addEventListener("change", () => {
+      const selected = methodSelect.value;
+      cardFields.classList.toggle("hidden", selected !== "card");
+      upiFields.classList.toggle("hidden", selected !== "upi");
+    });
+
+    document.getElementById("payment-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const selectedMethod = methodSelect.value;
+
+      if (!selectedMethod) {
+        alert("Please select a payment method.");
+        return;
+      }
+
+      // Simulate order processing
+      document.getElementById("payment-form").classList.add("d-none");
+      document.getElementById("payment-success").classList.remove("d-none");
+
+      // Show alert and redirect
+      setTimeout(() => {
+        alert("Order placed successfully!");
+        localStorage.removeItem("cart");
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "thankyou.html"; 
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
